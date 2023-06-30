@@ -1,0 +1,15 @@
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.csproj.AssemblyReference.cache
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.AssemblyInfoInputs.cache
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.AssemblyInfo.cs
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.csproj.CoreCompileInputs.cache
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\bin\Debug\net6.0\employeeThing.exe
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\bin\Debug\net6.0\employeeThing.deps.json
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\bin\Debug\net6.0\employeeThing.runtimeconfig.json
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\bin\Debug\net6.0\employeeThing.dll
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\bin\Debug\net6.0\employeeThing.pdb
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.dll
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\refint\employeeThing.dll
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.pdb
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\employeeThing.genruntimeconfig.cache
+C:\Users\herman.kittilsen\source\repos\Testing\employeeThing\employeeThing\obj\Debug\net6.0\ref\employeeThing.dll
