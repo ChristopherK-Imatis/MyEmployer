@@ -170,7 +170,7 @@ namespace employeeThing.Classes
                     {
                         case "1":
                             Console.Clear();
-                            Console.WriteLine("Search by \n1. firstname \n2. lastname");
+                            Console.WriteLine("Search by \n1. Lastname \n2. Firstname");
                             var firstOrLastName = Console.ReadLine();
 
                             while (firstOrLastName != "1" &&  firstOrLastName != "2")
@@ -179,6 +179,16 @@ namespace employeeThing.Classes
                                 firstOrLastName = Console.ReadLine();
                             }
 
+                            if (firstOrLastName == "1")
+                            {
+                                Console.WriteLine("Printing everything with the correct lastname!");
+                            }
+                            
+                            else
+                            {
+                                Console.WriteLine("Printing everything with the correct firstname!");
+                            }
+                            
 
                             break;
                     }
