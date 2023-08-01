@@ -182,6 +182,17 @@ namespace employeeThing.Classes
                             if (firstOrLastName == "1")
                             {
                                 Console.WriteLine("Printing everything with the correct lastname!");
+                                //What i must do: Get the list of employees named 'employees', make a target which will be a user input. The program will look through the list looking for the target. If the target(s) is/are fround it/they will be printed
+
+
+
+                                int target = int.Parse(Console.ReadLine());
+
+                                bool isExist = employees.Find(target);
+                                if (isExist)
+                                {
+                                    Console.WriteLine("Element found in the list");
+                                }
                             }
                             
                             else
