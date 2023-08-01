@@ -8,7 +8,7 @@ Employee.Menu();
 static void PrintWelcome()
 {
 
-    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine("╔╦╦╦═╦╗╔═╦═╦══╦═╗\r\n║║║║╩╣╚╣═╣║║║║║╩╣\r\n╚══╩═╩═╩═╩═╩╩╩╩═╝ \nPress enter to continue.");
 
     Console.ResetColor();
