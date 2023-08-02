@@ -72,6 +72,10 @@ namespace employeeThing.Classes
 
         //List for employee objects
         private static List<Employee> employees = new List<Employee>();
+        private static List<String> firstNames = new List<String>();
+        private static List<String> lastNames = new List<String>();
+        private static List<int> ages = new List<int>();
+        private static List<int> numbers = new List<int>();
 
         #region Write info
 
@@ -125,16 +129,35 @@ namespace employeeThing.Classes
                 case "1":
                     Console.Write("Enter firstname: ");
                     string firstName = Console.ReadLine();
+                    
+
                     Console.Write("Enter lastname: ");
                     string lastName = Console.ReadLine();
+                    
+
                     Console.Write("Enter age: ");
                     int age = int.Parse(Console.ReadLine());
+                    
+
                     Console.Write("Enter phone number: ");
                     int phoneNumber = int.Parse(Console.ReadLine());
+                    
+
                     Console.Write(line);
                     newEmployee = new Employee(firstName, lastName, age, phoneNumber);
                     employees.Add(newEmployee);
+
+
+                    firstNames.Add(newEmployee.FirstName);
+                    lastNames.Add(lastName);
+                    ages.Add(newEmployee.age);
+                    numbers.Add(phoneNumber);
+
+
                     newEmployee.DisplayFullDetails();
+
+                    
+
                     Menu();
                     break;
 
@@ -186,15 +209,15 @@ namespace employeeThing.Classes
 
 
 
-                                int target = int.Parse(Console.ReadLine());
+                                //int target = ages[0];
 
-                                bool isExist = employees.Find(target);
-                                if (isExist)
-                                {
-                                    Console.WriteLine("Element found in the list");
-                                }
+                                //bool isExist = ages.Find(target);
+                                //if (isExist)
+                                //{
+                                //    Console.WriteLine("Element found in the list");
+                                //}
                             }
-                            
+
                             else
                             {
                                 Console.WriteLine("Printing everything with the correct firstname!");
