@@ -215,15 +215,18 @@ namespace employeeThing.Classes
                             if (matchingEmployees.Count > 0)
                             {
                                 Console.WriteLine("Matching employees:");
-                                foreach (var employee in matchingEmployees)
+                                for (int i = 0; i < matchingEmployees.Count; i++)
                                 {
-                                    employee.EmpStringMaker();
+                                    Console.WriteLine($"Index: {i}, Employee Details:");
+                                    matchingEmployees[i].EmpStringMaker();
                                 }
                             }
                             else
                             {
                                 Console.WriteLine("No matching employees found.");
                             }
+
+                            //Don't want it to break here because i'd like for it to continue questioning you after you've searched for the employee you want to edit.
                             break;
 
                         default:
