@@ -12,6 +12,15 @@ namespace employeeThing.Classes
 {
     public class Employee
     {
+
+        public static List<Employee> SearchEmployeeByName(string searchTerm)
+        {
+            //Using language integrated query in order to look for something in the list that is made later on
+            List<Employee> matchingEmployees = employees.Where(employee => employee.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) || employee.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            return matchingEmployees;
+        }
+
         private string lastName;
         private string firstName;
         private int age;
@@ -60,6 +69,8 @@ namespace employeeThing.Classes
             {
                 phoneNumber = value;
             }
+
+
         }
 
         public Employee(string firstName, string lastName, int age, int phoneNumber)
