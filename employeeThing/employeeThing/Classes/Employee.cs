@@ -90,10 +90,13 @@ namespace employeeThing.Classes
         //Method for listing employees, listing lastname, firstname and age
         public static void EmployeeList()
         {
+            var i = 0;
             Console.Clear();
             Console.WriteLine("List of employees:");
             foreach (var employee in employees)
             {
+                Console.WriteLine($"{i}. ");
+                i++;
                 employee.EmpStringMaker();
             }
             Console.WriteLine("=================================");
@@ -107,14 +110,14 @@ namespace employeeThing.Classes
             string line = "---------------------------------";
             string lines = "=================================";
 
-            Console.WriteLine("What would you like to do? \n1. Make new employee \n2. List employee \n3. Edit employees \n9. Clear screen \n\n\n\n\nType 'Quit' if you want to close the program");
+            Console.WriteLine("What would you like to do? \n1. Make new employee \n2. List employees \n3. Edit employee \n9. Clear screen \n\n\n\n\nType 'Quit' if you want to close the program");
             Console.Write("Your selection: ");
 
             var selection = Console.ReadLine();
             while (selection != "1" && selection != "2" && selection != "3" && selection != "9" && selection != "quit")
             {
                 Console.WriteLine(line + "\nInvalid selection! Please type '1', '2', '3', '9' or 'quit'.");
-                Console.WriteLine("What would you like to do? \n1. Make new employee \n2. List employee \n3. Edit employees \n9. Clear screen \n\n\n\n\nType 'Quit' if you want to close the program");
+                Console.WriteLine("What would you like to do? \n1. Make new employee \n2. List employees \n3. Edit employee \n9. Clear screen \n\n\n\n\nType 'Quit' if you want to close the program");
                 selection = Console.ReadLine();
             }
 
@@ -145,52 +148,35 @@ namespace employeeThing.Classes
                     break;
 
                 case "3":
-                    //List employees
-                    //Try to make a filter
-                    //Pick employee
-                    //Show employee details
-                    //New menu for editing employee
-
-                    //Listing employees
+                    // List employees
                     EmployeeList();
 
-                    //Letting you chose how to search
-                    Console.WriteLine("What would you like to do? \n1. Search by name \n2. Search by number \n3. Search by age");
-                    Console.Write("Your selection: ");
-
-                    var choice = Console.ReadLine();
-                    while (choice != "1" && choice != "2" && choice != "3" && choice != "9" && choice != "quit")
+                    // Ask the user to select an employee to edit
+                    Console.WriteLine("Select the index of the employee you want to edit:");
+                    if (int.TryParse(Console.ReadLine(), out int selectedEmployeeIndex) && selectedEmployeeIndex >= 0 && selectedEmployeeIndex < employees.Count)
                     {
-                        Console.WriteLine(line + "\nInvalid selection!");
-                        Console.WriteLine("What would you like to do? \n1. Search by name \n2. Search by number \n3. Search by age");
-                        choice = Console.ReadLine();
+                        // Get the selected employee from the list
+                        Employee selectedEmployee = employees[selectedEmployeeIndex];
+
+                        // Ask for updated information for the employee
+                        Console.Write("Enter updated firstname: ");
+                        selectedEmployee.FirstName = Console.ReadLine();
+
+                        Console.Write("Enter updated lastname: ");
+                        selectedEmployee.LastName = Console.ReadLine();
+
+                        Console.Write("Enter updated age: ");
+                        selectedEmployee.Age = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter updated phone number: ");
+                        selectedEmployee.PhoneNumber = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Employee details updated successfully.");
+                        selectedEmployee.DisplayFullDetails();
                     }
-
-                    switch (choice)
+                    else
                     {
-                        case "1":
-                            Console.Clear();
-                            Console.WriteLine("Search by \n1. Lastname \n2. Firstname");
-                            var firstOrLastName = Console.ReadLine();
-
-                            while (firstOrLastName != "1" &&  firstOrLastName != "2")
-                            {
-                                Console.WriteLine(line + "\nInvalid selection! Please press '1' or press '2'");
-                                firstOrLastName = Console.ReadLine();
-                            }
-
-                            if (firstOrLastName == "1")
-                            {
-                                Console.WriteLine("Printing everything with the correct lastname!");
-                            }
-                            
-                            else
-                            {
-                                Console.WriteLine("Printing everything with the correct firstname!");
-                            }
-                            
-
-                            break;
+                        Console.WriteLine("Invalid employee index. Please select a valid index from the list.");
                     }
 
                     Menu();
