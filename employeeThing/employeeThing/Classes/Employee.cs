@@ -159,39 +159,81 @@ namespace employeeThing.Classes
                     break;
 
                 case "3":
-                    // List employees
+                    //List employees
                     EmployeeList();
 
-                    // Ask the user to select an employee to edit
-                    Console.WriteLine("Select the index of the employee you want to edit:");
-                    if (int.TryParse(Console.ReadLine(), out int selectedEmployeeIndex) && selectedEmployeeIndex >= 0 && selectedEmployeeIndex < employees.Count)
+                    // Ask the user to select an action
+                    Console.WriteLine("What would you like to do? \n1. Edit an employee \n2. Search for an employee");
+                    Console.Write("Your selection: ");
+                    var choice = Console.ReadLine();
+
+                    switch (choice)
                     {
-                        // Get the selected employee from the list
-                        Employee selectedEmployee = employees[selectedEmployeeIndex];
+                        case "1":
+                            //List employees
+                            EmployeeList();
 
-                        // Ask for updated information for the employee
-                        Console.Write("Enter updated firstname: ");
-                        selectedEmployee.FirstName = Console.ReadLine();
+                            //Ask the user to select an employee to edit
+                            Console.WriteLine("Select the index of the employee you want to edit:");
+                            if (int.TryParse(Console.ReadLine(), out int selectedEmployeeIndex) && selectedEmployeeIndex >= 0 && selectedEmployeeIndex < employees.Count)
+                            {
+                                //Get the selected employee from the list
+                                Employee selectedEmployee = employees[selectedEmployeeIndex];
 
-                        Console.Write("Enter updated lastname: ");
-                        selectedEmployee.LastName = Console.ReadLine();
+                                //Ask for updated information for the employee
+                                Console.Write("Enter updated firstname: ");
+                                selectedEmployee.FirstName = Console.ReadLine();
 
-                        Console.Write("Enter updated age: ");
-                        selectedEmployee.Age = int.Parse(Console.ReadLine());
+                                Console.Write("Enter updated lastname: ");
+                                selectedEmployee.LastName = Console.ReadLine();
 
-                        Console.Write("Enter updated phone number: ");
-                        selectedEmployee.PhoneNumber = int.Parse(Console.ReadLine());
+                                Console.Write("Enter updated age: ");
+                                selectedEmployee.Age = int.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Employee details updated successfully.");
-                        selectedEmployee.DisplayFullDetails();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid employee index. Please select a valid index from the list.");
+                                Console.Write("Enter updated phone number: ");
+                                selectedEmployee.PhoneNumber = int.Parse(Console.ReadLine());
+
+                                Console.WriteLine("Employee details updated successfully.");
+                                selectedEmployee.DisplayFullDetails();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid employee index. Please select a valid index from the list.");
+                            }
+
+                            Menu();
+                            break;
+
+                        case "2":
+                            //Search for an employee
+                            Console.WriteLine("Search for an employee by name:");
+                            string searchName = Console.ReadLine();
+
+                            //Get matching employees
+                            List<Employee> matchingEmployees = Employee.SearchEmployeeByName(searchName);
+
+                            if (matchingEmployees.Count > 0)
+                            {
+                                Console.WriteLine("Matching employees:");
+                                foreach (var employee in matchingEmployees)
+                                {
+                                    employee.EmpStringMaker();
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("No matching employees found.");
+                            }
+                            break;
+
+                        default:
+                            Console.WriteLine("Invalid selection. Please select either 1 or 2.");
+                            break;
                     }
 
                     Menu();
                     break;
+                    
 
                 case "9":
                     Console.Clear();
