@@ -103,7 +103,9 @@ namespace employeeThing.Classes
         {
             var i = 0;
             Console.Clear();
+            Console.WriteLine("---------------------------------");
             Console.WriteLine("List of employees:");
+            Console.WriteLine("---------------------------------");
             foreach (var employee in employees)
             {
                 Console.WriteLine($"{i}. ");
@@ -113,7 +115,7 @@ namespace employeeThing.Classes
             Console.WriteLine("=================================");
         }
 
-        #region New Employee
+        #region Menu
 
         public static void Menu()
         {
@@ -206,7 +208,7 @@ namespace employeeThing.Classes
 
                         case "2":
                             //Search for an employee
-                            Console.WriteLine("Search for an employee by name:");
+                            Console.WriteLine("\n\n\n\n\nSearch for an employee by name: \n");
                             string searchName = Console.ReadLine();
 
                             //Get matching employees
@@ -214,7 +216,9 @@ namespace employeeThing.Classes
 
                             if (matchingEmployees.Count > 0)
                             {
+                                Console.WriteLine(lines);
                                 Console.WriteLine("Matching employees:");
+                                Console.WriteLine(lines);
                                 for (int i = 0; i < matchingEmployees.Count; i++)
                                 {
                                     Console.WriteLine($"Index: {i}, Employee Details:");
